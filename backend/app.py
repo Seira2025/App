@@ -6,10 +6,9 @@ from flask import Flask, abort, jsonify, redirect, request, send_from_directory,
 from sqlalchemy import func, select
 from sqlalchemy.orm import joinedload
 
-from . import config
-from .database import Base, engine, session_scope
-from .models import Category, Order, OrderItem, Product
-
+import config
+from database import Base, engine, session_scope
+from models import Category, Order, OrderItem, Product
 
 def create_app() -> Flask:
     app = Flask(
