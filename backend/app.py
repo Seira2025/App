@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from flask import Flask, abort, jsonify, redirect, request, send_from_directory, url_for
-from sqlalchemy import Select, func, select
+from sqlalchemy import func, select
 from sqlalchemy.orm import joinedload
 
 from . import config
