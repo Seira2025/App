@@ -4,8 +4,8 @@ from random import randint
 
 from sqlalchemy import select
 
-from .database import Base, engine, session_scope
-from .models import Category, Order, OrderItem, Product
+from database import Base, engine, session_scope
+from models import Category, Order, OrderItem, Product
 
 CATEGORIES = (
     "New Arrivals",
