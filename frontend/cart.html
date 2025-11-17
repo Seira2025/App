@@ -1,250 +1,245 @@
 <!DOCTYPE html>
 <html class="light" lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Shopping Cart</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart - SEIRA</title>
 
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 
-<script id="tailwind-config">
-tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "primary": "#2C5F2D",
-          "background-light": "#f6f7f8",
-          "background-dark": "#101c22",
-          "neutral-text": "#333333",
-          "subtle-gray": "#F5F5F5",
-          "remove-red": "#D9534F"
-        },
-        fontFamily: {
-          "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#333333",
+            "background-light": "#F9F9F9",
+            "background-dark": "#101c22"
+          },
+          fontFamily: {
+            display: ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+          }
         }
-      },
-    },
-}
-</script>
+      }
+    }
+  </script>
 
-<style>
-.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-</style>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display text-neutral-text" data-page="cart">
-<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<body class="bg-background-light dark:bg-background-dark font-display text-[#212121] dark:text-gray-200">
 
 <!-- NAVBAR -->
-<header class="sticky top-0 z-50 flex w-full justify-center border-b border-gray-200 bg-background-light/80 backdrop-blur-sm dark:border-gray-700 dark:bg-background-dark/80">
-<div class="flex items-center gap-4 px-4 sm:px-10 py-3 w-full max-w-7xl">
+<header class="sticky top-0 z-50 flex w-full justify-center border-b border-gray-200 dark:border-gray-700 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+  <div class="flex items-center gap-4 px-4 sm:px-10 py-3 w-full max-w-7xl">
+    <div class="flex items-center gap-6">
+      <a class="text-lg font-black uppercase tracking-[0.25em] relative inline-flex items-center text-[#111618]" href="/">
+        <span class="inline-flex px-1.5 py-0.5 bg-[#111618] text-white rounded-sm">SE</span>IRA
+        <span class="absolute -bottom-1 -right-6 text-xs text-gray-500">.com</span>
+      </a>
 
-<!-- LOGO -->
-<a class="relative inline-flex items-center text-lg font-black tracking-[0.25em]" href="/index.html">
-  <span class="inline-flex px-1.5 py-0.5 bg-[#111618] text-white rounded-sm tracking-[0.2em] h-5">SE</span>IRA
-  <span class="absolute -bottom-1 -right-6 text-[10px] font-semibold text-gray-500">.com</span>
-</a>
+      <nav class="hidden lg:flex items-center gap-6 text-sm uppercase font-semibold">
+        <a href="/products?category=men" class="hover:text-primary">Men</a>
+        <a href="/products?category=women" class="hover:text-primary">Women</a>
+        <a href="/products?category=kids" class="hover:text-primary">Kids</a>
+        <a href="/products" class="hover:text-primary">GENZ</a>
+      </nav>
+    </div>
 
-<!-- NAV LINKS -->
-<nav class="hidden lg:flex items-center gap-6 text-sm font-semibold uppercase tracking-wide ml-10">
-  <a class="hover:text-primary" href="/products.html?category=men">Men</a>
-  <a class="hover:text-primary" href="/products.html?category=women">Women</a>
-  <a class="hover:text-primary" href="/products.html?category=kids">Kids</a>
-  <a class="hover:text-primary" href="#" data-shop-trigger>Shop</a>
-  <a class="hover:text-primary" href="/products.html">GENZ</a>
-</nav>
+    <div class="hidden md:flex flex-1 justify-center sm:ml-6">
+      <label class="flex min-w-[240px] h-10 w-full max-w-xl">
+        <div class="flex items-center bg-gray-200 dark:bg-gray-800 pl-3 rounded-l-lg">
+          <span class="material-symbols-outlined text-gray-500">search</span>
+        </div>
+        <input class="form-input flex-1 rounded-r-lg bg-gray-200 dark:bg-gray-800 px-4 focus:outline-none"
+          placeholder="Search products"/>
+      </label>
+    </div>
 
-<div class="flex gap-6 ml-auto text-[11px] font-semibold uppercase">
-  <button class="flex flex-col items-center" data-profile-trigger>
-      <span class="material-symbols-outlined text-xl">person</span>
-      <span>Profile</span>
-  </button>
-
-  <a class="flex flex-col items-center" href="/wishlist.html">
-      <span class="material-symbols-outlined text-xl">favorite</span>
-      <span>Wishlist</span>
-  </a>
-
-  <a class="relative flex flex-col items-center" href="/cart.html">
-      <span class="material-symbols-outlined text-xl">shopping_bag</span>
-      <span>Bag</span>
-      <span class="absolute top-0 right-1 rounded-full bg-primary text-white text-[10px] px-1" data-cart-count>0</span>
-  </a>
-</div>
-
-</div>
+    <div class="flex gap-6 ml-auto text-xs font-semibold uppercase">
+      <a href="/wishlist" class="flex flex-col items-center">
+        <span class="material-symbols-outlined">favorite</span>
+        Wishlist
+      </a>
+      <a href="/cart" class="relative flex flex-col items-center">
+        <span class="material-symbols-outlined">shopping_bag</span>
+        Bag
+        <span class="absolute top-0 right-[-6px] bg-primary text-white text-[10px] px-1 rounded-full"
+          data-cart-count>0</span>
+      </a>
+    </div>
+  </div>
 </header>
 
 <!-- MAIN -->
-<main class="w-full max-w-7xl mx-auto px-4 py-12">
-<div class="flex flex-col gap-8">
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
-<!-- BREADCRUMBS -->
-<div class="flex flex-col gap-4">
-  <div class="flex gap-2 text-sm">
-    <a class="text-gray-500 hover:text-primary" href="/index.html">Home</a>
+  <!-- Breadcrumbs -->
+  <div class="flex gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
+    <a href="/">Home</a>
     <span>/</span>
-    <a class="text-gray-500 hover:text-primary" href="/products.html">Products</a>
+    <a href="/products">Products</a>
     <span>/</span>
-    <span class="text-neutral-text">Shopping Bag</span>
+    <span class="text-[#212121] dark:text-white">Shopping Bag</span>
   </div>
 
-  <h1 class="text-4xl font-black tracking-tight">Shopping Bag</h1>
-</div>
+  <h1 class="text-4xl font-black mb-8">Shopping Bag</h1>
 
-<!-- CART LAYOUT -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
-<!-- LEFT: ITEMS -->
-<div class="lg:col-span-2 flex flex-col gap-4">
+    <!-- CART ITEMS -->
+    <div class="lg:col-span-2 flex flex-col gap-4">
 
-  <!-- EMPTY STATE -->
-  <div id="cart-empty" class="bg-white dark:bg-background-dark/50 rounded-lg shadow-sm p-8 flex flex-col items-center text-center gap-4">
-    <span class="material-symbols-outlined text-4xl text-gray-400">shopping_bag</span>
-    <p class="text-lg font-semibold">Your bag is empty</p>
-    <p class="text-sm text-gray-500">Browse our products and add items you love.</p>
-    <a class="px-6 py-3 bg-primary text-white rounded-lg font-bold" href="/products.html">Shop the latest</a>
-  </div>
+      <!-- Empty Cart -->
+      <div id="cart-empty"
+           class="bg-white dark:bg-background-dark/50 rounded-lg shadow p-8 text-center flex flex-col items-center gap-3 hidden">
+        <span class="material-symbols-outlined text-gray-400 text-5xl">shopping_bag</span>
+        <p class="text-lg font-semibold">Your cart is empty</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Start shopping to add items to your cart.</p>
+        <a href="/products"
+           class="inline-flex px-6 py-3 text-white bg-primary rounded-lg font-bold">Shop Now</a>
+      </div>
 
-  <!-- FILLED CART LIST -->
-  <div id="cart-list" class="bg-white dark:bg-background-dark/50 rounded-lg shadow-sm divide-y hidden"></div>
+      <!-- Cart List -->
+      <div id="cart-list"
+           class="bg-white dark:bg-background-dark/50 rounded-lg shadow divide-y divide-gray-200 dark:divide-gray-700 hidden">
+      </div>
+    </div>
 
-</div>
+    <!-- SUMMARY -->
+    <div class="bg-white dark:bg-background-dark/40 rounded-lg shadow p-6 h-fit sticky top-10 flex flex-col gap-6">
+      <h3 class="text-xl font-bold">Order Summary</h3>
 
-<!-- RIGHT: ORDER SUMMARY -->
-<div>
-  <div class="bg-subtle-gray dark:bg-background-dark/50 p-6 rounded-lg shadow-sm flex flex-col gap-6 sticky top-8">
-
-    <h3 class="text-xl font-bold">Order Summary</h3>
-
-    <div class="flex flex-col gap-3 border-b pb-4">
-      <div class="flex justify-between">
-        <span class="text-gray-600">Subtotal</span>
+      <div class="flex justify-between text-base">
+        <span>Subtotal</span>
         <span data-cart-subtotal>$0.00</span>
       </div>
 
-      <div class="flex justify-between">
-        <span class="text-gray-600">Estimated Shipping</span>
-        <span data-cart-shipping>$0.00</span>
+      <div class="flex justify-between text-base">
+        <span>Shipping</span>
+        <span data-cart-shipping>$5.00</span>
       </div>
+
+      <div class="border-t border-gray-300 dark:border-gray-600 pt-4 flex justify-between text-lg font-bold">
+        <span>Total</span>
+        <span data-cart-total>$0.00</span>
+      </div>
+
+      <button id="checkoutButton"
+              class="w-full h-12 bg-primary text-white rounded-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed">
+        Checkout
+      </button>
+
+      <a href="/products"
+         class="w-full h-12 bg-gray-200 rounded-lg flex items-center justify-center font-medium dark:bg-gray-700 dark:text-white">
+        Continue Shopping
+      </a>
     </div>
-
-    <div class="flex justify-between text-lg font-bold">
-      <span>Total</span>
-      <span data-cart-total>$0.00</span>
-    </div>
-
-    <button class="w-full h-12 bg-gray-300 text-gray-500 rounded-lg cursor-not-allowed font-bold" disabled data-checkout-btn>
-      Proceed to Checkout
-    </button>
-
-    <a class="w-full h-12 bg-primary text-white flex justify-center items-center rounded-lg font-bold" href="/products.html">
-      Continue Shopping
-    </a>
-
-    <p class="flex items-center justify-center text-sm text-gray-500">
-      <span class="material-symbols-outlined !text-base">lock</span>
-      Secure Checkout
-    </p>
-
   </div>
-</div>
 
-</div>
-</div>
 </main>
 
-<!-- MODALS + JS -->
-<script src="static/js/cart-indicator.js"></script>
-<script src="static/js/ai-search-modal.js"></script>
-<script src="static/js/shop-modal.js"></script>
-<script src="static/js/simon-modal.js"></script>
-<script src="static/js/wishlist.js"></script>
 
+<!-- CART LOGIC -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+function loadCart() {
+  const cart = JSON.parse(localStorage.getItem("cartItems") || "[]");
 
-  /* Cart, subtotal, quantity logic — unchanged */
-  const store = window.SeiraCartIndicator;
-  const listEl = document.getElementById('cart-list');
-  const emptyEl = document.getElementById('cart-empty');
+  const empty = document.getElementById("cart-empty");
+  const list = document.getElementById("cart-list");
+
   const subtotalEl = document.querySelector("[data-cart-subtotal]");
   const shippingEl = document.querySelector("[data-cart-shipping]");
   const totalEl = document.querySelector("[data-cart-total]");
-  const checkoutBtn = document.querySelector("[data-checkout-btn]");
+  const checkoutBtn = document.getElementById("checkoutButton");
 
-  const SHIPPING = 5;
-
-  function formatMoney(val){ return `$${(Number(val)||0).toFixed(2)}`; }
-
-  function render(){
-    const items = store?.getItems?.() || [];
-    const has = items.length > 0;
-
-    emptyEl.classList.toggle("hidden", has);
-    listEl.classList.toggle("hidden", !has);
-    listEl.innerHTML = "";
-
-    if(has){
-      items.forEach(item=>{
-        const div = document.createElement("div");
-        div.className="flex justify-between items-start p-4 gap-4";
-        div.dataset.row = item.key;
-
-        div.innerHTML = `
-          <div class="flex gap-4">
-            <img src="${item.image}" class="w-20 h-20 object-cover rounded-lg"/>
-            <div class="flex flex-col">
-              <p class="font-medium">${item.title}</p>
-              <p class="text-sm text-gray-500">Size: ${item.size||"N/A"}</p>
-              <p class="text-sm">${formatMoney(item.priceValue)}</p>
-              <button data-remove class="text-remove-red text-xs mt-2">Remove</button>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-2">
-            <button data-dec class="w-7 h-7 bg-subtle-gray rounded-full">-</button>
-            <span>${item.quantity}</span>
-            <button data-inc class="w-7 h-7 bg-subtle-gray rounded-full">+</button>
-          </div>
-        `;
-        listEl.appendChild(div);
-      });
-    }
-
-    const subtotal = items.reduce((a,b)=>a + b.quantity*b.priceValue,0);
-    const shipping = has ? SHIPPING : 0;
-    const total = subtotal + shipping;
-
-    subtotalEl.textContent = formatMoney(subtotal);
-    shippingEl.textContent = formatMoney(shipping);
-    totalEl.textContent = formatMoney(total);
-
-    if(has){
-      checkoutBtn.disabled = false;
-      checkoutBtn.classList.remove("bg-gray-300","text-gray-500","cursor-not-allowed");
-      checkoutBtn.classList.add("bg-primary","text-white");
-    }
+  if (cart.length === 0) {
+    empty.classList.remove("hidden");
+    list.classList.add("hidden");
+    subtotalEl.textContent = "$0.00";
+    totalEl.textContent = "$0.00";
+    checkoutBtn.disabled = true;
+    return;
   }
 
-  listEl.addEventListener("click", e=>{
-    const row = e.target.closest("[data-row]");
-    if(!row) return;
-    const key = row.dataset.row;
+  empty.classList.add("hidden");
+  list.classList.remove("hidden");
+  checkoutBtn.disabled = false;
 
-    if(e.target.hasAttribute("data-inc")) store.updateItemQuantity(key, store.getItem(key).quantity+1);
-    if(e.target.hasAttribute("data-dec")) store.updateItemQuantity(key, store.getItem(key).quantity-1);
-    if(e.target.hasAttribute("data-remove")) store.removeItem(key);
+  list.innerHTML = "";
 
-    render();
+  let subtotal = 0;
+
+  cart.forEach((item, index) => {
+    const price = parseFloat(item.priceValue || item.price.replace("$", "")) || 0;
+    const lineTotal = price * (item.quantity || 1);
+    subtotal += lineTotal;
+
+    const row = document.createElement("div");
+    row.className = "flex justify-between p-4";
+
+    row.innerHTML = `
+      <div class="flex gap-4">
+        <div class="w-20 h-20 rounded bg-gray-200 bg-cover bg-center"
+             style="background-image:url('${item.image || item.imageUrl}')"></div>
+
+        <div>
+          <p class="font-semibold">${item.title}</p>
+          <p class="text-sm text-gray-500 mt-1">Size: ${item.size || "Free"}</p>
+          <p class="text-sm text-gray-500 mt-1">$${price}</p>
+
+          <button class="text-red-500 text-xs mt-2" onclick="removeItem(${index})">Remove</button>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button onclick="updateQty(${index}, -1)"
+                class="w-7 h-7 flex items-center justify-center rounded bg-gray-200">-</button>
+        <span>${item.quantity || 1}</span>
+        <button onclick="updateQty(${index}, 1)"
+                class="w-7 h-7 flex items-center justify-center rounded bg-gray-200">+</button>
+      </div>
+    `;
+
+    list.appendChild(row);
   });
 
-  render();
-});
+  subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+  const shipping = subtotal > 0 ? 5 : 0;
+  shippingEl.textContent = `$${shipping.toFixed(2)}`;
+  totalEl.textContent = `$${(subtotal + shipping).toFixed(2)}`;
+}
+
+function updateQty(i, delta) {
+  const cart = JSON.parse(localStorage.getItem("cartItems") || "[]");
+  if (!cart[i]) return;
+
+  cart[i].quantity = (cart[i].quantity || 1) + delta;
+  if (cart[i].quantity <= 0) cart.splice(i, 1);
+
+  localStorage.setItem("cartItems", JSON.stringify(cart));
+  loadCart();
+}
+
+function removeItem(i) {
+  const cart = JSON.parse(localStorage.getItem("cartItems") || "[]");
+  cart.splice(i, 1);
+  localStorage.setItem("cartItems", JSON.stringify(cart));
+  loadCart();
+}
+
+document.addEventListener("DOMContentLoaded", loadCart);
 </script>
+
+<script src="/static/js/cart-indicator.js"></script>
+<script src="/static/js/wishlist.js"></script>
 
 </body>
 </html>
