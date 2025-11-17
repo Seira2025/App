@@ -1,13 +1,17 @@
 {
   "version": 2,
   "public": true,
-  "name": "seirafashion-frontend",
-  "builds": [
-    { "src": "**/*.html", "use": "@vercel/static" },
-    { "src": "static/**/*", "use": "@vercel/static" }
-  ],
+  "framework": null,
+  "cleanUrls": true,
+  "trailingSlash": false,
   "routes": [
-    { "src": "/(.*)", "dest": "/$1" }
+    { "src": "/cart", "dest": "/cart.html" },
+    { "src": "/products", "dest": "/products.html" },
+    { "src": "/product", "dest": "/product.html" },
+    { "src": "/bmi", "dest": "/bmi.html" },
+    { "src": "/experience", "dest": "/experience.html" },
+    { "src": "/tryon", "dest": "/tryon.html" },
+    { "src": "/shippinginfo", "dest": "/shippinginfo.html" },
+    { "src": "/wishlist", "dest": "/wishlist.html" }
   ]
 }
-
