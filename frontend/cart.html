@@ -34,7 +34,7 @@
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-neutral-text dark:text-gray-200" data-page="cart.html">
+<body class="bg-background-light dark:bg-background-dark font-display text-neutral-text dark:text-gray-200" data-page="pagescart">
 <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
 <!-- TopNavBar Component -->
 <header class="sticky top-0 z-50 flex w-full justify-center border-b border-solid border-gray-200/80 dark:border-gray-700/80 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
@@ -49,11 +49,11 @@
 </div>
 </div>
 <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold uppercase tracking-wide text-[#111618] ml-10">
-<a class="hover:text-primary transition-colors" href="/products.html?category=men">Men</a>
-<a class="hover:text-primary transition-colors" href="/products.html?category=women">Women</a>
-<a class="hover:text-primary transition-colors" href="/products.html?category=kids">Kids</a>
+<a class="hover:text-primary transition-colors" href="/pages/products?category=men">Men</a>
+<a class="hover:text-primary transition-colors" href="/pages/products?category=women">Women</a>
+<a class="hover:text-primary transition-colors" href="/pages/products?category=kids">Kids</a>
 <a class="hover:text-primary transition-colors" href="#" data-shop-trigger role="button" aria-haspopup="dialog">Shop</a>
-<a class="hover:text-primary transition-colors" href="/products.html">GENZ</a>
+<a class="hover:text-primary transition-colors" href="/pages/products">GENZ</a>
 <div class="flex items-center gap-1">
 <button class="hover:text-primary transition-colors" type="button" data-ai-search-trigger>AI Search</button>
 <span class="text-[10px] font-bold text-primary tracking-[0.2em] uppercase">New</span>
@@ -75,11 +75,11 @@
 <span class="material-symbols-outlined text-xl">person</span>
 <span>Profile</span>
 </button>
-<a class="flex flex-col items-center justify-center gap-1" href="/wishlist.html">
+<a class="flex flex-col items-center justify-center gap-1" href="/pages/wishlist">
 <span class="material-symbols-outlined text-xl">favorite</span>
 <span>Wishlist</span>
 </a>
-<a class="relative flex flex-col items-center justify-center gap-1" href="/cart.html">
+<a class="relative flex flex-col items-center justify-center gap-1" href="/pages/cart">
 <span class="material-symbols-outlined text-xl">shopping_bag</span>
 <span>Bag</span>
 <span class="absolute top-0 right-1 rounded-full bg-primary text-white text-[10px] font-bold px-1" data-cart-count>0</span>
@@ -124,9 +124,9 @@
 <div class="flex flex-col gap-4">
 <!-- Breadcrumbs Component -->
 <div class="flex flex-wrap gap-2">
-<a class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal" href="/home.html">Home</a>
+<a class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal" href="/pages/home">Home</a>
 <span class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">/</span>
-<a class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal" href="/products.html">Products</a>
+<a class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal" href="/pages/products">Products</a>
 <span class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">/</span>
 <span class="text-neutral-text dark:text-gray-200 text-sm font-medium leading-normal">Shopping Bag</span>
 </div>
@@ -168,7 +168,7 @@
 </div>
 <div class="flex flex-col gap-4">
 <button class="w-full flex items-center justify-center rounded-lg h-12 bg-gray-300 text-gray-500 text-base font-bold leading-normal tracking-wide cursor-not-allowed" disabled data-checkout-btn>Proceed to Checkout</button>
-<a class="w-full flex items-center justify-center rounded-lg h-12 bg-primary text-white text-base font-bold leading-normal tracking-wide" href="/products.html">Continue Shopping</a>
+<a class="w-full flex items-center justify-center rounded-lg h-12 bg-primary text-white text-base font-bold leading-normal tracking-wide" href="/pages/products">Continue Shopping</a>
 </div>
 <div class="flex items-center justify-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
 <span class="material-symbols-outlined !text-base">lock</span>
