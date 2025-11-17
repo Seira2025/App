@@ -34,7 +34,7 @@
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-neutral-text dark:text-gray-200" data-page="pagescart">
+<body class="bg-background-light dark:bg-background-dark font-display text-neutral-text dark:text-gray-200" data-page="cart">
 <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
 <!-- TopNavBar Component -->
 <header class="sticky top-0 z-50 flex w-full justify-center border-b border-solid border-gray-200/80 dark:border-gray-700/80 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
@@ -141,7 +141,7 @@
 <span class="material-symbols-outlined text-4xl text-gray-400">shopping_bag</span>
 <p class="text-lg font-semibold">Your bag is empty</p>
 <p class="text-sm text-gray-500 dark:text-gray-400">Browse our collections and add items you love to see them here.</p>
-<a class="inline-flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide" href="products.html">Shop the latest</a>
+<a class="inline-flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide" href="/pages/products">Shop the latest</a>
 </div>
 <div id="cart-list" class="bg-white dark:bg-background-dark/50 rounded-lg shadow-sm flex flex-col divide-y divide-gray-200 dark:divide-gray-700 hidden"></div>
 </div>
@@ -349,11 +349,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-<script src="static/js/cart-indicator.js"></script>
-<script src="static/js/ai-search-modal.js"></script>
-<script src="static/js/shop-modal.js"></script>
-<script src="static/js/simon-modal.js"></script>
-<script src="static/js/wishlist.js"></script>
+<script src="/static/js/cart-indicator.js"></script>
+<script src="/static/js/ai-search-modal.js"></script>
+<script src="/static/js/shop-modal.js"></script>
+<script src="/static/js/simon-modal.js"></script>
+<script src="/static/js/wishlist.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const profileModal = document.getElementById('profile-modal');
