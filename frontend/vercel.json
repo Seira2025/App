@@ -1,17 +1,16 @@
 {
   "version": 2,
-  "public": true,
-  "framework": null,
   "cleanUrls": true,
-  "trailingSlash": false,
   "routes": [
-    { "src": "/cart", "dest": "/cart.html" },
-    { "src": "/products", "dest": "/products.html" },
-    { "src": "/product", "dest": "/product.html" },
-    { "src": "/bmi", "dest": "/bmi.html" },
-    { "src": "/experience", "dest": "/experience.html" },
-    { "src": "/tryon", "dest": "/tryon.html" },
-    { "src": "/shippinginfo", "dest": "/shippinginfo.html" },
-    { "src": "/wishlist", "dest": "/wishlist.html" }
+    { "src": "/", "dest": "/index.html" },
+    { "src": "cart", "dest": "/cart.html" },
+    { "src": "products", "dest": "/products.html" },
+    { "src": "product", "dest": "/product.html" },
+    { "src": "order", "dest": "/order.html" },
+    { "src": "bmi", "dest": "/bmi.html" },
+    { "src": "experience", "dest": "/experience.html" },
+    { "src": "tryon", "dest": "/tryon.html" },
+    { "src": "shippinginfo", "dest": "/shippinginfo.html" },
+    { "src": "wishlist", "dest": "/wishlist.html" }
   ]
 }
