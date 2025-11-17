@@ -1,16 +1,13 @@
 {
   "version": 2,
-  "cleanUrls": false,
+  "public": true,
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
     { "source": "/cart", "destination": "/cart.html" },
-    { "source": "/products", "destination": "/products.html" },
     { "source": "/product", "destination": "/product.html" },
-    { "source": "/order", "destination": "/order.html" },
+    { "source": "/products", "destination": "/products.html" },
+    { "source": "/wishlist", "destination": "/wishlist.html" },
     { "source": "/bmi", "destination": "/bmi.html" },
-    { "source": "/experience", "destination": "/experience.html" },
-    { "source": "/tryon", "destination": "/tryon.html" },
-    { "source": "/shippinginfo", "destination": "/shippinginfo.html" },
-    { "source": "/wishlist", "destination": "/wishlist.html" }
+    { "source": "/tryon", "destination": "/tryon.html" }
   ]
 }
