@@ -1,20 +1,16 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json"
-}
-{
   "version": 2,
   "cleanUrls": false,
-  "public": ".",
-  "routes": [
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/cart", "dest": "/cart.html" },
-    { "src": "/products", "dest": "/products.html" },
-    { "src": "/product", "dest": "/product.html" },
-    { "src": "/order", "dest": "/order.html" },
-    { "src": "/bmi", "dest": "/bmi.html" },
-    { "src": "/experience", "dest": "/experience.html" },
-    { "src": "/tryon", "dest": "/tryon.html" },
-    { "src": "/shippinginfo", "dest": "/shippinginfo.html" },
-    { "src": "/wishlist", "dest": "/wishlist.html" }
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/cart", "destination": "/cart.html" },
+    { "source": "/products", "destination": "/products.html" },
+    { "source": "/product", "destination": "/product.html" },
+    { "source": "/order", "destination": "/order.html" },
+    { "source": "/bmi", "destination": "/bmi.html" },
+    { "source": "/experience", "destination": "/experience.html" },
+    { "source": "/tryon", "destination": "/tryon.html" },
+    { "source": "/shippinginfo", "destination": "/shippinginfo.html" },
+    { "source": "/wishlist", "destination": "/wishlist.html" }
   ]
 }
