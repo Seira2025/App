@@ -10,6 +10,7 @@
     { "src": "^/pages/shippinginfo$", "dest": "/shippinginfo.html" },
     { "src": "^/pages/order$", "dest": "/order.html" },
     { "src": "^/pages/experience$", "dest": "/experience.html" },
+    { "src": "^/pages/home$", "dest": "/home.html" },
 
     { "src": "^/static/(.*)$", "dest": "/static/$1" },
 
