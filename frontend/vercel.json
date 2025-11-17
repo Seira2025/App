@@ -1,13 +1,18 @@
 {
   "version": 2,
-  "public": true,
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/cart", "destination": "/cart.html" },
-    { "source": "/product", "destination": "/product.html" },
-    { "source": "/products", "destination": "/products.html" },
-    { "source": "/wishlist", "destination": "/wishlist.html" },
-    { "source": "/bmi", "destination": "/bmi.html" },
-    { "source": "/tryon", "destination": "/tryon.html" }
+  "routes": [
+    { "src": "^/pages/product$", "dest": "/product.html" },
+    { "src": "^/pages/products$", "dest": "/products.html" },
+    { "src": "^/pages/cart$", "dest": "/cart.html" },
+    { "src": "^/pages/wishlist$", "dest": "/wishlist.html" },
+    { "src": "^/pages/bmi$", "dest": "/bmi.html" },
+    { "src": "^/pages/tryon$", "dest": "/tryon.html" },
+    { "src": "^/pages/shippinginfo$", "dest": "/shippinginfo.html" },
+    { "src": "^/pages/order$", "dest": "/order.html" },
+    { "src": "^/pages/experience$", "dest": "/experience.html" },
+
+    { "src": "^/static/(.*)$", "dest": "/static/$1" },
+
+    { "src": "^/$", "dest": "/index.html" }
   ]
 }
